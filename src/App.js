@@ -21,23 +21,23 @@ function App() {
     e.target.reset();
   };
 
-  const deleteHandler = (task) => {
+  const deleteHandler = (taskId) => {
     let tempCopy = [...todos];
-    let index = tempCopy.map(function(el){return el[2];}).indexOf(task);
+    let index = tempCopy.map(function(el){return el[2];}).indexOf(taskId);
     tempCopy.splice(index, 1);
     setTodos(tempCopy);
   };
 
-  const checkBoxHandler = (task) => {
+  const checkBoxHandler = (taskId) => {
     let tempCopy = [...todos];
-    let index = tempCopy.map(function(el){return el[2];}).indexOf(task);
+    let index = tempCopy.map(function(el){return el[2];}).indexOf(taskId);
     tempCopy[index][1] = !tempCopy[index][1];
     setTodos(tempCopy);
   };
 
-  const editHandler = (task) => {
+  const editHandler = (taskId) => {
     setEditingState(true)
-    let index = todos.map(function(el){return el[2];}).indexOf(task);
+    let index = todos.map(function(el){return el[2];}).indexOf(taskId);
     setIDOfTodoToBeEdited(index)
 }
   const todoMapper = (items) => {
